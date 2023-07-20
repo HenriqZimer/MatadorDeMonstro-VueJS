@@ -1,21 +1,30 @@
 <template>
     <div class="panel buttons">
             <template>
-                <buttonDefault label="Ataque" btnAtaque @onClick="attack" />
-                <buttonDefault label="Ataque Especial" btnAtaqueEspecial @onClick="attack" />
-                <buttonDefault label="Curar" btnCurar @onClick="healAndHurt"/>
-                <buttonDefault label="Desistir" btnDesistir @onClick="running"/>
+                <btnAtacar  />
+                <btnAtaqueEspecial />
+                <btnCurar  />
+                <btnDesistir />
             </template>
-                <buttonDefault label="Novo Game" btnNewGame @onClick="startGame"/>
+                <btnNovoJogo />
         </div>
 </template>
 
 <script>
-import buttonDefault from '@/components/buttons/buttonDefault.vue'
+import btnAtacar from '/src/components/gameButtons/btnAtacar.vue'
+import btnAtaqueEspecial from '/src/components/gameButtons/btnAtaqueEspecial.vue'
+import btnCurar from '/src/components/gameButtons/btnCurar.vue'
+import btnDesistir from '/src/components/gameButtons/btnDesistir.vue'
+import btnNovoJogo from '/src/components/gameButtons/btnNovoJogo.vue'
+
 
 export default {
     components: {
-        buttonDefault
+        btnAtacar,
+        btnAtaqueEspecial,
+        btnCurar,
+        btnDesistir,
+        btnNovoJogo
     },
 }
 </script>
