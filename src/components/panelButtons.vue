@@ -1,6 +1,6 @@
 <template>
     <div class="panel buttons">
-            <template v-if="henrique">
+            <template v-if="verificador === 1">
                 <btnAtacar @ataqueClicadoNeto="eventoAtaqueFilho" />
                 <btnAtaqueEspecial @especialClicadoNeto="eventoEspecialFilho" />
                 <btnCurar @curaClicadoNeto="eventoCuraFilho"/>
@@ -25,25 +25,21 @@ export default {
         btnDesistir,
         btnNovoJogo
     },
+    props: ['verificador'],
     methods: {
     eventoAtaqueFilho() {
-        console.log('filho')
       this.$emit('eventoAtaquePai');
     },
     eventoCuraFilho() {
-        console.log('filho')
       this.$emit('eventoCuraPai');
     },
     eventoEspecialFilho() {
-        console.log('filho')
       this.$emit('eventoEspecialPai');
     },
     eventoDesistirFilho() {
-        console.log('filho')
       this.$emit('eventoDesistirPai');
     },
     eventoGameFilho() {
-        console.log('filho')
       this.$emit('eventoGamePai');
     },
 

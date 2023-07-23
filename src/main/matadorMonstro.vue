@@ -10,7 +10,7 @@
             @eventoEspecialPai="Especial"
             @eventoCuraPai="Cura" 
             @eventoDesistirPai="Desistir"
-            @eventoGamePai="Game"/>
+            @eventoGamePai="Game" :verificador = "contador"/>
         <panelLogs/>
     </div>
 </template>
@@ -33,6 +33,7 @@ data() {
     return {
         playerLife: 100,
         monsterLife: 100,
+        contador: 0
         }
     },
 methods: {
@@ -41,17 +42,14 @@ methods: {
         this.monsterLife = health.monsterLife;
         },
     Ataque() { 
-        console.log('pai')
         this.playerLife -= 10
         this.monsterLife -= 10
         },
     Cura() { 
-        console.log('pai')
         this.playerLife += 30
         this.monsterLife += 30
         },
     Especial() { 
-        console.log('pai')
         // this.playerLife -= 100
         this.monsterLife -= 100
         },
@@ -59,8 +57,8 @@ methods: {
         window.location.reload()
         },
     Game(){
-        window.location.reload()
-        }
+        this.contador = 1
+       }
     }
 }
 </script>
@@ -69,12 +67,10 @@ methods: {
 html {
     font-family: 'Montserrat', sans-serif;
 }
-
 #app {
     display: flex;
     flex-direction: column;
 }
-
 .panel {
     margin: 10px;
     padding: 20px;

@@ -11,7 +11,6 @@ export default {
     },
     methods:{
     eventoDesistirNeto() {
-        console.log('neto')
       this.$emit('desistirClicadoNeto');
         }
     }

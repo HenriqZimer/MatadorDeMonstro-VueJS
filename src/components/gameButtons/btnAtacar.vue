@@ -11,7 +11,6 @@ export default {
     },
     methods:{
     eventoAtaqueNeto() {
-        console.log('neto')
       this.$emit('ataqueClicadoNeto');
         }
     }

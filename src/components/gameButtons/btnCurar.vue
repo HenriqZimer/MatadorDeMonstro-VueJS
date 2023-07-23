@@ -11,7 +11,6 @@ export default {
     },
     methods:{
     eventoCuraNeto() {
-        console.log('neto')
       this.$emit('curaClicadoNeto');
         }
     }

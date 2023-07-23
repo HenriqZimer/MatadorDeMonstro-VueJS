@@ -11,7 +11,6 @@ export default {
     },
     methods:{
     eventoGameNeto() {
-        console.log('neto')
       this.$emit('gameClicadoNeto');
         }
     }
