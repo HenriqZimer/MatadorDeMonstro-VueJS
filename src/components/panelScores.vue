@@ -25,16 +25,10 @@
 <script>
 export default {
   props: ['playerLife', 'monsterLife'], 
-  
-  // Definindo as props que serão recebidas do componente pai
-  
   methods: {
     sendData() {
-
-      // Emitindo o evento personalizado com os dados para o componente pai (caso necessário)
-
       this.$emit('healthBar', {
-        playerLife: this.playerLife,
+        playerLife: this.playerLife -30 ,
         monsterLife: this.monsterLife
       });
     }

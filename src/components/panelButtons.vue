@@ -1,22 +1,21 @@
 <template>
     <div class="panel buttons">
-            <template>
-                <btnAtacar  />
-                <btnAtaqueEspecial />
-                <btnCurar  />
-                <btnDesistir />
+            <template v-if="henrique">
+                <btnAtacar @ataqueClicadoNeto="eventoAtaqueFilho" />
+                <btnAtaqueEspecial @especialClicadoNeto="eventoEspecialFilho" />
+                <btnCurar @curaClicadoNeto="eventoCuraFilho"/>
+                <btnDesistir @desistirClicadoNeto="eventoDesistirFilho" />
             </template>
-                <btnNovoJogo />
+                <btnNovoJogo v-else @gameClicadoNeto="eventoGameFilho" />
         </div>
 </template>
 
 <script>
-import btnAtacar from '/src/components/gameButtons/btnAtacar.vue'
-import btnAtaqueEspecial from '/src/components/gameButtons/btnAtaqueEspecial.vue'
-import btnCurar from '/src/components/gameButtons/btnCurar.vue'
-import btnDesistir from '/src/components/gameButtons/btnDesistir.vue'
-import btnNovoJogo from '/src/components/gameButtons/btnNovoJogo.vue'
-
+import btnAtacar from './gameButtons/btnAtacar.vue'
+import btnAtaqueEspecial from './gameButtons/btnAtaqueEspecial.vue'
+import btnCurar from './gameButtons/btnCurar.vue'
+import btnDesistir from './gameButtons/btnDesistir.vue'
+import btnNovoJogo from './gameButtons/btnNovoJogo.vue'
 
 export default {
     components: {
@@ -26,6 +25,29 @@ export default {
         btnDesistir,
         btnNovoJogo
     },
+    methods: {
+    eventoAtaqueFilho() {
+        console.log('filho')
+      this.$emit('eventoAtaquePai');
+    },
+    eventoCuraFilho() {
+        console.log('filho')
+      this.$emit('eventoCuraPai');
+    },
+    eventoEspecialFilho() {
+        console.log('filho')
+      this.$emit('eventoEspecialPai');
+    },
+    eventoDesistirFilho() {
+        console.log('filho')
+      this.$emit('eventoDesistirPai');
+    },
+    eventoGameFilho() {
+        console.log('filho')
+      this.$emit('eventoGamePai');
+    },
+
+  }
 }
 </script>
 
