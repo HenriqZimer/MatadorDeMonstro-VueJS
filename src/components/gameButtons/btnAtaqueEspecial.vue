@@ -1,5 +1,5 @@
 <template>
-    <buttonDefault label="Ataque Especial" btnAtaqueEspecial @onClick="eventoEspecialNeto" />
+    <buttonDefault label="Super Kamehameha" btnAtaqueEspecial @onClick="eventoEspecialNeto" />
 </template>
 
 <script>
@@ -11,7 +11,7 @@ export default {
     },
     methods:{
     eventoEspecialNeto() {
-      this.$emit('especialClicadoNeto');
+    this.$emit('especialClicadoNeto');
         }
     }
 }

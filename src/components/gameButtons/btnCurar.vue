@@ -1,5 +1,5 @@
 <template>
-    <buttonDefault label="Curar" btnCurar @onClick="eventoCuraNeto" />
+    <buttonDefault label="Semente dos Deuses" btnCurar @onClick="eventoCuraNeto" />
 </template>
 
 <script>
@@ -11,7 +11,7 @@ export default {
     },
     methods:{
     eventoCuraNeto() {
-      this.$emit('curaClicadoNeto');
+    this.$emit('curaClicadoNeto');
         }
     }
 }

@@ -2,22 +2,26 @@
     <div class="matador">
         <panelScores 
             :playerLife="playerLife" 
-            :monsterLife="monsterLife" 
-            @healthBar="atualizarDados"/>
-        <panelResult />
+            :monsterLife="monsterLife" />
+
+        <panelResult 
+            :playerLife="playerLife" 
+            :monsterLife="monsterLife"
+            @eventoGamePai="Game" />
+
         <panelButtons 
             @eventoAtaquePai="Ataque"
             @eventoEspecialPai="Especial"
             @eventoCuraPai="Cura" 
             @eventoDesistirPai="Desistir"
-            @eventoGamePai="Game" :verificador = "contador"/>
-        <panelLogs/>
+            :playerLife="playerLife"
+            :monsterLife="monsterLife" />
+
     </div>
 </template>
 
 <script>
 import panelButtons from "../components/panelButtons.vue"
-import panelLogs from "../components/panelLogs.vue"
 import panelResult from "../components/panelResult.vue"
 import panelScores from "../components/panelScores.vue"
 
@@ -25,7 +29,6 @@ export default {
 
 components: {
         panelButtons,
-        panelLogs,
         panelResult,
         panelScores,
     }, 
@@ -33,33 +36,40 @@ data() {
     return {
         playerLife: 100,
         monsterLife: 100,
-        contador: 0
         }
     },
 methods: {
-    updateData(health) {
+    atualizarDados(health) {
         this.playerLife = health.playerLife;
         this.monsterLife = health.monsterLife;
         },
     Ataque() { 
-        this.playerLife -= 10
-        this.monsterLife -= 10
-        },
-    Cura() { 
-        this.playerLife += 30
-        this.monsterLife += 30
+        this.monsterLife -= Math.floor(Math.random() * (10 - 5 + 1)) + 5;
+        this.playerLife -= Math.floor(Math.random() * (10 - 5 + 1)) + 5;
         },
     Especial() { 
-        // this.playerLife -= 100
-        this.monsterLife -= 100
+        this.monsterLife -= Math.floor(Math.random() * (15 - 9 + 1)) + 5;
+        this.playerLife -= Math.floor(Math.random() * (12 - 7 + 1)) + 5;
+        },
+    Cura() { 
+        this.playerLife += Math.floor(Math.random() * (10 - 8 + 1)) + 8;
+        this.playerLife -= Math.floor(Math.random() * (10 - 5 + 1)) + 5;
         },
     Desistir(){
-        window.location.reload()
+        // this.playerLife = 100
+        // this.monsterLife = 100
+        this.reloadPageAfterDelay()
         },
     Game(){
-        this.contador = 1
-       }
+        window.location.reload()
+        },
+        reloadPageAfterDelay() {
+        setTimeout(() =>  {
+            window.location.reload();
+    }, 2000);
     }
+    
+}
 }
 </script>
 

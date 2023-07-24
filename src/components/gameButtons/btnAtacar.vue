@@ -1,5 +1,5 @@
 <template>
-    <buttonDefault label="Ataque" btnAtaque @onClick="eventoAtaqueNeto" />
+    <buttonDefault label="Kaioken Ataque" btnAtaque @onClick="eventoAtaqueNeto" />
 </template>
 
 <script>
@@ -11,7 +11,7 @@ export default {
     },
     methods:{
     eventoAtaqueNeto() {
-      this.$emit('ataqueClicadoNeto');
+    this.$emit('ataqueClicadoNeto');
         }
     }
 }
