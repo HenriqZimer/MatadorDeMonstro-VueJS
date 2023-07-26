@@ -16,7 +16,6 @@
             @eventoDesistirPai="Desistir"
             :playerLife="playerLife"
             :monsterLife="monsterLife" />
-
     </div>
 </template>
 

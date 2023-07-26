@@ -34,45 +34,45 @@
 
 <script>
 export default {
-    props: ['playerLife', 'monsterLife'], 
-    methods: {
-        enviarDados() {
-            this.$emit('healthBar', {
-                playerLife: this.playerLife,
-                monsterLife: this.monsterLife
-        });
-        }
+  props: ['playerLife', 'monsterLife'], 
+  methods: {
+    enviarDados() {
+      this.$emit('healthBar', {
+        playerLife: this.playerLife,
+        monsterLife: this.monsterLife
+      });
     }
-};
+  }
+}
 </script>
 
 <style>
 .scores {
-    display: flex;
+  display: flex;
 }
 .score {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .score h1 {
-    font-weight: 300;
-    font-size: 1.6rem;
+  font-weight: 300;
+  font-size: 1.6rem;
 }
 .life-bar {
-    width: 80%;
-    height: 20px;
-    border: 1px solid #AAA;
+  width: 80%;
+  height: 20px;
+  border: 1px solid #AAA;
 }
 .life-bar .life {
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    background-color: green;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  background-color: green;
 }
 .life-bar .life.danger {
-    background-color: red;
+  background-color: red;
 }
 </style>
