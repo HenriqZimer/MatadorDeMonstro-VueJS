@@ -1,4 +1,7 @@
 # matador-de-monstro
+Projeto criado com base nas aulas de VueJS da Cod3r, é uma adaptação usando VueCLI
+
+Link: https://henriqzimer.github.io/MatadorDeMonstroVueJS/
 
 ## Project setup
 ```
