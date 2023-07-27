@@ -1,7 +1,7 @@
-# matador-de-monstro
-Projeto criado com base nas aulas de VueJS da Cod3r, é uma adaptação usando VueCLI
+# Projeto #01 - Matador de Monstro
+Projeto desenvolvido com base nas aulas de VueJS da Cod3r com o porfessor Leonardo Leitão, é uma adaptação de outro projeto do mesmo nome usando VueCLI
 
-Link: https://henriqzimer.github.io/MatadorDeMonstroVueJS/
+Link do Projeto no GitHub Pages: https://henriqzimer.github.io/MatadorDeMonstroVueJS/
 
 ## Project setup
 ```
